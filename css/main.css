@@ -1,6 +1,7 @@
 html, body {
   background-color: #444;
 }
+
 .game {
   display: flex;
   align-items: center;

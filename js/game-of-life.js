@@ -15,16 +15,16 @@ var GameOfLife = {
     var row = [];
     for (var i = 0; i < cells.length; i++) {
       var cell = cells[i];
-      var isAlive = cell.className === 'alive'; //Devuelve Verdadero o falso este tipo de comparacion
+      var isAlive = cell.className === 'alive'; // Return false or true
       row.push(isAlive);
-      if (i % cols === (cols - 1)) { // Reviso que el modulo de i sobre 5 sea equivalente a 4, entonces, cuando el modulo es 4, ya las 5 primeras celdas se agregaron al array row. Tengoque hacer push a ese array y vaciarlo para cargar las siguientes 5.
-        board.push(row);
-        row = [];
+      if (i % cols === (cols - 1)) { // If i mod 5 equal to 4 => when mod === 4, 5 cells inside the array row.
+        board.push(row); // Push of array
+        row = []; // Empty the array
       }
     }
     return board;
   },
-  getNextStep: function(a, b) { // A=current b=new
+  getNextStep: function(a, b) { // a=current board b=new board
     for (var i = 0; i < a.length; i++) {
       var row = a[i];
       for (var j = 0; j < row.length; j++) {

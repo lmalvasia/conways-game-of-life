@@ -3,11 +3,9 @@ var play = function() {
   Board.updateCells(cells);
 }
 
-var init = function() {/* Se ejecuta luego de que se cargue todo el html */
+var init = function() { // Its execute after loading the HTML
   Game.init();
   Game.start();
-  // var btnPlay = Board.getPlayButton();
-  // btnPlay.onclick = play;
 }
 
 window.onload = init;
