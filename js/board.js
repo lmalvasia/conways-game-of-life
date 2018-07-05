@@ -39,5 +39,6 @@ var Board = {
     var newBoard = GameOfLife.createEmptyBoard(Board.rows, Board.columns);
     GameOfLife.getNextStep(currentBoard, newBoard);
     Board.updateCells(newBoard);
+    console.log('lucas');
   }
 }

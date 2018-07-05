@@ -4,6 +4,7 @@ var Game = {
   board: null,
   cells: null,
   init: function() {
+    document.getElementsByClassName('game')[0].style.display = 'flex';
     Board.createCells();
     Game.board = Board.getBoard();
     Game.cells = Board.getCells();
