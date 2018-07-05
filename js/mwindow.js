@@ -8,12 +8,12 @@ var Window = {
     Window.accept = Window.getAccept();
     Window.accept.onclick = Window.getNumberFromHTML;
   },
-  HideModalWindow: function() {
-    var ModalWindow = document.getElementsByClassName('modalwindow')[0].style.display = 'none';
+  hideModalWindow: function() {
+    document.getElementsByClassName('modalwindow')[0].style.display = 'none';
   },
   getNumberFromHTML: function() {
     Window.number = document.getElementsByName('cells')[0].value;
-    Window.HideModalWindow();
+    Window.hideModalWindow();
     Board.rows = Window.number;
     Board.columns = Window.number;
     Game.init();
