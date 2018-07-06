@@ -2,10 +2,10 @@ var Window = {
   accept: null,
   number: 0,
   getAccept: function() {
-    return document.getElementsByName('Accept')[0];
+    return document.getElementById('Accept');
   },
   getNumberFromInput: function() {
-    return document.getElementsByName('cells')[0].value;
+    return document.getElementById('cellnumber').value;
   },
   createDivValidation: function() {
     var formCells = document.getElementsByClassName('formCells')[0]; // Div with class formCells
@@ -30,7 +30,7 @@ var Window = {
     document.getElementsByClassName('modalwindow')[0].style.display = 'none';
   },
   InputFocus: function() {
-    var input = document.getElementsByName('cells')[0];
+    var input = document.getElementById('cellnumber');
     input.onfocus = Window.hideValidation;
   },
   Accept: function() {
