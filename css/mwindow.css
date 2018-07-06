@@ -73,7 +73,25 @@ input[type='button'] {
 }
 
 input[type='button']:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.validation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* Center vertically /*
+  /* justify-content: center;  /* Center Horizontally */
+  height: 2em;
+  padding-left: 5px;
+  margin-bottom: 5px;
+  background-color: rgb(207, 83, 83);
+  border: 1px solid rgb(139, 139, 139);
+  font: normal 1em arial, sans-serif;
+}
+
+.validation strong {
+  font-weight: bold;
 }
 
 @keyframes animatetop {
