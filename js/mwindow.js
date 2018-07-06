@@ -15,8 +15,23 @@ var Window = {
     parentDiv.insertBefore(Validation, formCells); // Add node validation to HTML
     Validation.innerHTML = 'Ingrese un <strong>&nbsp;"numero"&nbsp;</strong> entre <strong>&nbsp;"0 y 25"&nbsp;</strong>'
   },
+  deleteDivValidation: function() {
+    var validationDiv = document.getElementsByClassName('validation')[0];
+    var parentDiv = validationDiv.parentNode; // Parent of Validation
+    parentDiv.removeChild(validationDiv); // Add node validation to HTML
+  },
+  hideValidation: function() {
+    var validationDiv = document.getElementsByClassName('validation')[0];
+    if (document.getElementsByClassName('validation')[0] !== undefined) {
+      Window.deleteDivValidation();
+    }
+  },
   hideModalWindow: function() {
     document.getElementsByClassName('modalwindow')[0].style.display = 'none';
+  },
+  InputFocus: function() {
+    var input = document.getElementsByName('cells')[0];
+    input.onfocus = Window.hideValidation;
   },
   Accept: function() {
     Window.accept = Window.getAccept();
@@ -24,16 +39,17 @@ var Window = {
   },
   setBoardDimension: function() {
     Window.number = Window.getNumberFromInput();
-    if (Window.number >= 5 && Window.number <= 25) {
-      Window.hideModalWindow();
-      Board.rows = Window.number;
-      Board.columns = Window.number;
-      Game.init();
-      Game.start();
+    var onlyNumbers = Validation.onlyNumbers(Window.number);
+    var includedNumber = Validation.includedNumber(5, 25, Window.number);
+    if (onlyNumbers && includedNumber) {
+      Window.hideModalWindow(); // Hide modal window
+      Board.rows = Window.number; // Set the number of rows of the board equal input number
+      Board.columns = Window.number; // Set the number of colums of the board equal input number
+      Game.init(); // init the game
+      Game.start(); // start the game
     } else {
-      if (document.getElementsByClassName('validation')[0] === undefined) {
-        Window.createDivValidation();
-
+      if (document.getElementsByClassName('validation')[0] === undefined) { // If the div doesnt exist
+        Window.createDivValidation(); // Create and insert a div with the validation
       }
     }
   }
