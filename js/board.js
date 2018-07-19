@@ -10,7 +10,7 @@ var Board = {
   },
   dynamicBoard: function() {
     var board = Board.getBoard();
-    var calculo = Board.rows * 36;
+    var calculo = Board.rows * 26;
     board.style.height = calculo + 'px';
     board.style.width = calculo + 'px';
   },
