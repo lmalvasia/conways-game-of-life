@@ -3,7 +3,11 @@ var Game = {
   play: null,
   board: null,
   cells: null,
+  showGame: function() {
+    document.getElementsByClassName('game')[0].style.display = 'flex';
+  },
   init: function() {
+    Game.showGame();
     Board.createCells();
     Game.board = Board.getBoard();
     Game.cells = Board.getCells();

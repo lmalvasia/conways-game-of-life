@@ -4,8 +4,10 @@ var play = function() {
 }
 
 var init = function() { // Its execute after loading the HTML
-  Game.init();
-  Game.start();
+  Window.Accept();
+  Window.InputFocus();
+  //Game.init();
+  //Game.start();
 }
 
 window.onload = init;
