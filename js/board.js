@@ -4,6 +4,12 @@ var Board = {
   getBoard: function() {
     return document.getElementsByClassName('board')[0];
   },
+  dynamicBoard: function() {
+    var calculo = Board.rows * 36;
+    var board = Board.getBoard();
+    board.style.height = calculo + 'px';
+    board.style.width = calculo + 'px';
+  },
   getCells: function() {
     var board = Board.getBoard();
     return board.getElementsByTagName('li');

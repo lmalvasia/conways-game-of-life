@@ -8,6 +8,7 @@ var Game = {
   },
   init: function() {
     Game.showGame();
+    Board.dynamicBoard();
     Board.createCells();
     Game.board = Board.getBoard();
     Game.cells = Board.getCells();
