@@ -8,6 +8,12 @@ var Board = {
     var board = Board.getBoard();
     return board.getElementsByTagName('li');
   },
+  dynamicBoard: function() {
+    var board = Board.getBoard();
+    var calculo = Board.rows * 26;
+    board.style.height = calculo + 'px';
+    board.style.width = calculo + 'px';
+  },
   getAliveCells: function() {
     return document.getElementsByClassName('alive');
   },
