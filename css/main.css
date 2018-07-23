@@ -1,5 +1,5 @@
 html, body {
-  background-color: #444;
+  background: linear-gradient(to bottom, rgb(200, 200, 200), rgb(77, 77, 77));
 }
 
 .game {
