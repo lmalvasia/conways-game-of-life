@@ -48,6 +48,7 @@ var Board = {
   },
   reset: function() {
     Board.createCells();
+    Game.update();
     Game.start();
   }
 }
