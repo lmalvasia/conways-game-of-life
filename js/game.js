@@ -1,8 +1,10 @@
 var Game = {
   next: null,
   play: null,
+  reset: null,
   board: null,
   cells: null,
+  interval: null,
   showGame: function() {
     document.getElementsByClassName('game')[0].style.display = 'flex';
   },
@@ -14,15 +16,23 @@ var Game = {
     Game.cells = Board.getCells();
     Game.next = document.getElementById('next');
     Game.play = document.getElementById('play');
+    Game.reset = document.getElementById('reset');
   },
   start: function() {
     for (var i = 0; i < Game.cells.length; i++) {
       Game.cells[i].onclick = Cell.toggle;
     }
+    Game.reset.onclick = Board.reset;
     Game.next.onclick = Board.nextStep;
     Game.play.onclick = Game.update;
   },
   update: function() {
-    setInterval(Board.nextStep, 1000);
+    if (Game.play.innerHTML === 'Play!') {
+      Game.interval = setInterval(Board.nextStep, 1000);
+      Game.play.innerHTML = 'Stop!';
+    } else {
+      clearInterval(Game.interval);
+      Game.play.innerHTML = 'Play!';
+    }
   }
 };
