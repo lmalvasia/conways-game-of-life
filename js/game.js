@@ -30,9 +30,11 @@ var Game = {
     if (Game.play.innerHTML === 'Play!') {
       Game.interval = setInterval(Board.nextStep, 1000);
       Game.play.innerHTML = 'Stop!';
+      Game.next.disabled = true;
     } else {
       clearInterval(Game.interval);
       Game.play.innerHTML = 'Play!';
+      Game.next.disabled = false;
     }
   }
 };
