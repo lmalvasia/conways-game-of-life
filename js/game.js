@@ -13,6 +13,10 @@ var Game = {
     Game.showGame();
     Board.createCells();
     Board.dynamicBoard();
+    if(localStorage.getItem('game') != null)
+    {
+      Storage.loadBoard(Board.getBoard());  
+    }
     Game.board = Board.getBoard();
     Game.cells = Board.getCells();
     Game.next = document.getElementById('next');
