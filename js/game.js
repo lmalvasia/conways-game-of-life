@@ -2,6 +2,7 @@ var Game = {
   next: null,
   play: null,
   reset: null,
+  save: null,
   board: null,
   cells: null,
   interval: null,
@@ -17,6 +18,7 @@ var Game = {
     Game.next = document.getElementById('next');
     Game.play = document.getElementById('play');
     Game.reset = document.getElementById('reset');
+    Game.save = document.getElementById('save');
   },
   start: function() {
     for (var i = 0; i < Game.cells.length; i++) {
@@ -25,6 +27,7 @@ var Game = {
     Game.reset.onclick = Board.reset;
     Game.next.onclick = Board.nextStep;
     Game.play.onclick = Game.update;
+    Game.save.onclick = Board.save;
   },
   update: function() {
     if (Game.play.innerHTML === 'Play!') {

@@ -50,5 +50,8 @@ var Board = {
     Board.createCells();
     Game.update();
     Game.start();
+  },
+  save: function() {
+    Storage.saveBoard(Board.getBoard());
   }
 }
