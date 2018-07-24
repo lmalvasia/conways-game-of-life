@@ -1,13 +1,14 @@
 var Storage = {
-  board: null,
+  game: null,
   cancelButton: null,
   loadButton: null,
-  saveBoard: function(currentBoard) {
-    Storage.board = document.getElementsByClassName('game')[0].innerHTML;
-    localStorage.setItem('game', Storage.board);
+  saveGame: function() {
+    Storage.game = document.getElementsByClassName('game')[0].innerHTML;
+    localStorage.setItem('game', Storage.game);
     localStorage.setItem('columns',Board.columns);
+    alert('Game saved')
   },
-  loadBoard: function(currentBoard) {
+  loadGame: function() {
     document.getElementsByClassName('game')[0].innerHTML = localStorage.getItem('game');
     Board.rows = localStorage.getItem('columns');
     Board.columns = localStorage.getItem('columns');

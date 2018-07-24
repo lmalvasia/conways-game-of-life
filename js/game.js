@@ -13,9 +13,8 @@ var Game = {
     Game.showGame();
     Board.createCells();
     Board.dynamicBoard();
-    if(localStorage.getItem('game') != null)
-    {
-      Storage.loadBoard(Board.getBoard());  
+    if (localStorage.getItem('game') != null) {
+      Storage.loadGame();
     }
     Game.board = Board.getBoard();
     Game.cells = Board.getCells();
@@ -31,7 +30,7 @@ var Game = {
     Game.reset.onclick = Board.reset;
     Game.next.onclick = Board.nextStep;
     Game.play.onclick = Game.update;
-    Game.save.onclick = Board.save;
+    Game.save.onclick = Game.saveGame;
   },
   update: function() {
     if (Game.play.innerHTML === 'Play!') {
@@ -43,5 +42,8 @@ var Game = {
       Game.play.innerHTML = 'Play!';
       Game.next.disabled = false;
     }
+  },
+  saveGame: function() {
+    Storage.saveGame();
   }
 };
