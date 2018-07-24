@@ -3,6 +3,9 @@ var Storage = {
   saveBoard: function(currentBoard) {
     Storage.board = currentBoard;
     localStorage.setItem('board',Storage.board);
-    console.log(localStorage.getItem('board'));
+  },
+  loadBoard: function(currentBoard) {
+    Storage.board = localStorage.getItem('board');
+    currentBoard.innerHTML = generateListFromArray(Storage.board).innerHTML;
   }
 }

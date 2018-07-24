@@ -4,8 +4,12 @@ var play = function() {
 }
 
 var init = function() { // Its execute after loading the HTML
-  Window.Accept();
-  Window.InputFocus();
+  if (localStorage.getItem('board') != null) {
+    Window.hideModalWindow();
+  } else {
+    Window.Accept();
+    Window.InputFocus();
+  }
   //Game.init();
   //Game.start();
 }
