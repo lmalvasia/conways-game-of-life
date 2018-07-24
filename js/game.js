@@ -44,6 +44,8 @@ var Game = {
     }
   },
   saveGame: function() {
+    Game.play.innerHTML = 'Stop'; // Play button as stop button
+    Game.update(); // Stop the Game
     Storage.saveGame();
   }
 };

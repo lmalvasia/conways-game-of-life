@@ -48,8 +48,8 @@ var Board = {
   },
   reset: function() {
     Board.createCells();
-    Game.play.innerHTML = 'Stop';
-    Game.update();
-    Game.start();
+    Game.play.innerHTML = 'Stop'; // Play button as stop button
+    Game.update(); // Stop the Game
+    Game.start(); // Game start
   }
 }
