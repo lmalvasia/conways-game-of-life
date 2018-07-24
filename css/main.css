@@ -7,6 +7,7 @@ html, body {
   /* flex */
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
 }
@@ -37,7 +38,10 @@ html, body {
 
 button {
   margin: 5px;
-  width: 60px;
+  width: auto;
+  min-width: 60px;
   height: 40px;
   cursor: pointer;
 }
+
+.buttons {}
