@@ -4,10 +4,14 @@ var play = function() {
 }
 
 var init = function() { // Its execute after loading the HTML
-  Window.Accept();
-  Window.InputFocus();
-  //Game.init();
-  //Game.start();
+  if (localStorage.getItem('game') != null) {
+    Window.hideModalWindow();
+    Storage.loadWindow();
+  } else {
+    Storage.hideLoad();
+    Window.Accept();
+    Window.InputFocus();
+  }
 }
 
 window.onload = init;

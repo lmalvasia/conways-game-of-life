@@ -29,6 +29,9 @@ var Window = {
   hideModalWindow: function() {
     document.getElementsByClassName('modalwindow')[0].style.display = 'none';
   },
+  showModalWindow: function() {
+    document.getElementsByClassName('modalwindow')[0].style.display = 'flex';
+  },
   InputFocus: function() {
     var input = document.getElementById('cellnumber');
     input.onfocus = Window.hideValidation;
