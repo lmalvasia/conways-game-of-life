@@ -55,11 +55,14 @@ var GameOfLife = {
     if (currentBoard[posY + 1] && currentBoard[posY + 1][posX + 1])
       count++;
     if (cell === false) {
-      if (count >= 3) {
+      if (count === 3) {
         return true;
       }
     }
     if (cell === true) {
+      if (count < 2 || count > 3) {
+        return false;
+      }
       if (count === 2 || count === 3) {
         return true;
       }
