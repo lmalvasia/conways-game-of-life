@@ -10,9 +10,9 @@ var Board = {
   },
   dynamicBoard: function() {
     var board = Board.getBoard();
-    var calculo = Board.rows * 26;
-    board.style.height = calculo + 'px';
-    board.style.width = calculo + 'px';
+    var calculation = Board.rows * 26;
+    board.style.height = calculation + 'px';
+    board.style.width = calculation + 'px';
   },
   getAliveCells: function() {
     return document.getElementsByClassName('alive');
