@@ -35,36 +35,39 @@ var GameOfLife = {
       }
     }
   },
-  applyRule: function(currentBoard, posY, posX) {
-    var cell = currentBoard[posX][posY];
+  applyRule: function(board, posX, posY) {
+    var cell = board[posX][posY];
     var count = 0;
-    if (currentBoard[posY - 1] && currentBoard[posY - 1][posX - 1])
+    if (board[posX - 1] && board[posX - 1][posY - 1])
       ++count;
-    if (currentBoard[posY - 1] && currentBoard[posY - 1][posX])
+    if (board[posX - 1] && board[posX - 1][posY])
       ++count;
-    if (currentBoard[posY - 1] && currentBoard[posY - 1][posX + 1])
+    if (board[posX - 1] && board[posX - 1][posY + 1])
       ++count;
-    if (currentBoard[posY][posX + 1])
+    if (board[posX] && board[posX][posY - 1])
       ++count;
-    if (currentBoard[posY][posX - 1])
+    if (board[posX] && board[posX][posY + 1])
       ++count;
-    if (currentBoard[posY + 1] && currentBoard[posY + 1][posX - 1])
+    if (board[posX + 1] && board[posX + 1][posY - 1])
       ++count;
-    if (currentBoard[posY + 1] && currentBoard[posY + 1][posX])
+    if (board[posX + 1] && board[posX + 1][posY])
       ++count;
-    if (currentBoard[posY + 1] && currentBoard[posY + 1][posX + 1])
-      count++;
-    if (cell === false) {
+    if (board[posX + 1] && board[posX + 1][posY + 1])
+      ++count;
+    if (!cell) {
       if (count === 3) {
         return true;
       }
     }
-    if (cell === true) {
-      if (count < 2 || count > 3) {
+    if (cell) {
+      if (count < 2) {
         return false;
       }
       if (count === 2 || count === 3) {
         return true;
+      }
+      if (count > 3) {
+        return false;
       }
     }
   }

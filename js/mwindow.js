@@ -13,7 +13,7 @@ var Window = {
     Validation.className = 'validation';
     var parentDiv = formCells.parentNode; // Parent of formCells
     parentDiv.insertBefore(Validation, formCells); // Add node validation to HTML
-    Validation.innerHTML = 'Ingrese un <strong>&nbsp;"numero"&nbsp;</strong> entre <strong>&nbsp;"0 y 25"&nbsp;</strong>'
+    Validation.innerHTML = 'Enter a <strong>&nbsp;"number"&nbsp;</strong> between <strong>&nbsp;"5 and 25"&nbsp;</strong>'
   },
   deleteDivValidation: function() {
     var validationDiv = document.getElementsByClassName('validation')[0];
